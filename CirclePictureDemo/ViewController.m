@@ -17,8 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
-
     FLHPageView *pageView = [[FLHPageView alloc] init];
     pageView.frame = CGRectMake(30, 50, self.view.frame.size.width - 60, 130);
     
@@ -30,12 +30,12 @@
     pageView.clickBlock = ^(NSInteger index){
         
         NSLog(@"我是block的回调点击事件，%ld",index);
-        NSLog(@"Hello world!");
+        NSLog(@"very good!");
     };
 }
 
 -(void)pageViewDidClick:(NSInteger)index{
-    
+    NSLog(@"good!");
     NSLog(@"我是page代理的回调点击事件, %ld",index);
     NSLog(@"hello");
 }
