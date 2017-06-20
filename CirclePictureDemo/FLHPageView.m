@@ -40,7 +40,7 @@
     return self;
 }
 
-#pragma mark fram 改变调用
+#pragma mark frame - 改变调用
 -(void)layoutSubviews{
     //imageView 的宽高
     CGFloat scrollW = self.frame.size.width;
@@ -54,16 +54,15 @@
     CGFloat pageY = scrollH - pageH;
     self.pageControl.frame = CGRectMake(pageX, pageY, pageW, pageH);
     
-    self.scrollView.frame=self.bounds;
+    self.scrollView.frame = self.bounds;
     
-    for (int i = 0 ; i< count;i++){
+    for (int i = 0; i < count; i++){
         
-        FLHImageView * imageView = self.scrollView.subviews[i];
+        FLHImageView *imageView = self.scrollView.subviews[i];
         imageView.frame = CGRectMake(i*scrollW, 0, scrollW, scrollH);
         
     }
     self.scrollView.contentSize = CGSizeMake(scrollW*count, 0);
-    
     self.pageControl.numberOfPages = self.imageArr.count;
     
     [self updateImage];
@@ -77,7 +76,7 @@
     //始终让中间的图片显示
     //图片变换顺序后 设置scrollView contentOffset 显示中间
     for (int i = 0; i < COUNT; i++) {
-        FLHImageView * imageView = self.scrollView.subviews[i];
+        FLHImageView *imageView = self.scrollView.subviews[i];
         NSInteger index = self.pageControl.currentPage;
         if(i == 0){
             index--;
